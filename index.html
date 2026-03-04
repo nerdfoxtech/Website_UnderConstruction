@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NerdFox Tech Solutions – Bakersfield IT &amp; Repair (temp)</title>
+    <!-- Font Awesome 6 (free) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #0B0C14; /* deep navy background */
+      color: #FFFFFF;
+      line-height: 1.5;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* header with new logo style */
+    .temp-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      padding: 1.8rem 0;
+      border-bottom: 1px solid #F05A28; /* orange border */
+    }
+
+    .logo-block {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.1;
+    }
+
+    .logo-top {
+      font-size: 2.5rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: #F05A28; /* orange */
+    }
+
+    .logo-bottom {
+      font-size: 2rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      color: #FFFFFF; /* white */
+    }
+
+    .temp-nav {
+      display: flex;
+      gap: 2rem;
+      font-weight: 550;
+    }
+
+    .temp-nav a {
+      text-decoration: none;
+      color: #FFFFFF;
+      border-bottom: 2px solid transparent;
+      padding-bottom: 4px;
+      transition: 0.2s;
+    }
+
+    .temp-nav a:hover {
+      border-bottom-color: #F05A28;
+      color: #F05A28;
+    }
+
+    /* hero minimal */
+    .hero-mini {
+      padding: 3rem 0 2rem;
+    }
+
+    .hero-mini h1 {
+      font-size: 3.2rem;
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      color: #FFFFFF;
+    }
+
+    .hero-mini .tagline {
+      font-size: 1.4rem;
+      color: #CCCCDD; /* soft grayish white */
+      margin: 1rem 0 2rem;
+      max-width: 700px;
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      background: #1A1C28; /* dark navy card */
+      padding: 1.5rem 2rem;
+      border-radius: 60px;
+      margin: 2rem 0;
+      border: 1px solid #F05A2830;
+      justify-content: center;
+    }
+
+    .badge-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 600;
+      color: #FFFFFF;
+    }
+
+    .badge-item i {
+      font-size: 1.8rem;
+      color: #F05A28; /* orange */
+    }
+
+    .section-title {
+      font-size: 2rem;
+      font-weight: 700;
+      margin: 3rem 0 1.5rem;
+      color: #FFFFFF;
+    }
+
+    .section-title i {
+      color: #F05A28;
+      margin-right: 12px;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2rem;
+      margin: 2rem 0;
+    }
+
+    .service-card {
+      background: #1A1C28; /* dark navy */
+      padding: 2rem 1.8rem;
+      border-radius: 32px;
+      box-shadow: 0 15px 25px -10px rgba(0,0,0,0.5);
+      border: 1px solid #33364A;
+      transition: 0.2s;
+      color: #FFFFFF;
+    }
+
+    .service-card:hover {
+      border-color: #F05A28;
+      transform: translateY(-4px);
+    }
+
+    .service-card i {
+      font-size: 2.6rem;
+      color: #F05A28; /* orange icons */
+      margin-bottom: 1.2rem;
+    }
+
+    .service-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 0.8rem;
+      color: #FFFFFF;
+    }
+
+    .service-card p {
+      color: #CCCCDD;
+    }
+
+    .contact-block {
+      background: #1A1C28;
+      border-radius: 48px;
+      padding: 2.8rem;
+      margin: 3rem 0 2rem;
+      box-shadow: 0 15px 25px -10px #000000;
+      border: 1px solid #33364A;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .contact-details {
+      flex: 2 1 300px;
+    }
+
+    .contact-details h2 {
+      font-size: 2rem;
+      margin-bottom: 1.8rem;
+      color: #FFFFFF;
+    }
+
+    .contact-details p {
+      font-size: 1.2rem;
+      margin: 1rem 0;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      color: #FFFFFF;
+    }
+
+    .contact-details i {
+      width: 32px;
+      color: #F05A28;
+      font-size: 1.6rem;
+    }
+
+    .service-area {
+      background: #0B0C14; /* deeper navy */
+      border-radius: 40px;
+      padding: 1.8rem;
+      flex: 1 1 250px;
+      border: 1px solid #F05A2830;
+    }
+
+    .service-area h3 {
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+      color: #FFFFFF;
+    }
+
+    .service-area ul {
+      list-style: none;
+    }
+
+    .service-area li {
+      padding: 0.5rem 0;
+      font-weight: 500;
+      color: #CCCCDD;
+    }
+
+    .service-area i {
+      color: #F05A28;
+      margin-right: 10px;
+    }
+
+    .founder-note {
+      background: #1A1C28;
+      border: 1px solid #F05A2830;
+      border-radius: 50px;
+      padding: 2.5rem;
+      margin: 3rem 0;
+      text-align: center;
+      color: #FFFFFF;
+    }
+
+    .founder-note i {
+      color: #F05A28;
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .founder-note p {
+      font-size: 1.5rem;
+      max-width: 800px;
+      margin: 0 auto;
+      color: #FFFFFF;
+    }
+
+    .footer-temp {
+      background: #0F111A;
+      color: #CCCCDD;
+      padding: 2.5rem 0;
+      margin-top: 4rem;
+      border-radius: 40px 40px 0 0;
+      text-align: center;
+      border-top: 1px solid #F05A2830;
+    }
+
+    .footer-temp .social a {
+      color: #FFFFFF;
+      font-size: 2rem;
+      margin: 0 1rem;
+      transition: 0.2s;
+    }
+
+    .footer-temp .social a:hover {
+      color: #F05A28;
+    }
+
+    hr {
+      border: 1px solid #33364A;
+      margin: 2rem 0;
+    }
+
+    /* mobile touches */
+    @media (max-width: 600px) {
+      .temp-header {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      .hero-mini h1 {
+        font-size: 2.5rem;
+      }
+    }
+
+    /* small floating badge */
+    .floating-badge {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #F05A28;
+      color: #0B0C14;
+      padding: 0.5rem 1.2rem;
+      border-radius: 60px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      box-shadow: 0 4px 12px rgba(240,90,40,0.3);
+      z-index: 99;
+    }
+    .floating-badge i {
+      color: #0B0C14;
+      margin-right: 6px;
+    }
+
+    /* additional logo display (image version) - using text as requested, but also an extra logo placement */
+    .logo-image-display {
+      display: flex;
+      justify-content: center;
+      margin: 1rem 0 2rem;
+    }
+
+    .logo-graphic {
+      background: #1A1C28;
+      padding: 1rem 3rem;
+      border-radius: 60px;
+      border: 2px solid #F05A28;
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .logo-graphic .logo-top {
+      font-size: 2.2rem;
+    }
+
+    .logo-graphic .logo-bottom {
+      font-size: 1.8rem;
+    }
+  </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- header with exact NerdFox / Tech Solutions logo style -->
+      <div class="temp-header">
+        <div class="logo-block">
+          <div class="logo-top">NerdFox</div>
+          <div class="logo-bottom">Tech Solutions</div>
+        </div>
+        <div class="temp-nav"> <a href="#">Home</a> <a href="#">Services</a> <a
+
+            href="#">Contact</a> </div>
+      </div>
+      <!-- additional logo placement right after header (more prominent) -->
+      <!-- hero - no pricing, just hook -->
+      <section class="hero-mini">
+        <h1>SIMPLE. STABLE. NO-BS.</h1>
+        <div class="tagline">Empowering Bakersfield businesses and residents
+          with headache-free technology — straight talk, no jargon.</div>
+        <!-- trust badges (no pricing) -->
+        <div class="badge-row">
+          <div class="badge-item"><i class="fas fa-handcuffs"></i> No lock-in</div>
+          <div class="badge-item"><i class="fas fa-comment-dots"></i> Straight
+            talk</div>
+          <div class="badge-item"><i class="fas fa-user-tie"></i> Founder
+            answers</div>
+        </div>
+      </section>
+      <!-- BUSINESS & INDIVIDUAL SERVICES (no pricing) -->
+      <section>
+        <h2 class="section-title"><i class="fas fa-briefcase"></i> Business IT –
+          local partner</h2>
+        <div class="card-grid">
+          <div class="service-card"><i class="fas fa-chart-pie"></i>
+            <h3>Managed IT</h3>
+            <p>24/7 monitoring, security patches, network stability — we keep
+              you running.</p>
+          </div>
+          <div class="service-card"><i class="fas fa-shield-halved"></i>
+            <h3>Cybersecurity</h3>
+            <p>HIPAA/PCI compliance, firewall management, threat detection &amp;
+              response.</p>
+          </div>
+          <div class="service-card"><i class="fas fa-cloud"></i>
+            <h3>Cloud solutions</h3>
+            <p>Microsoft 365 / Google Workspace migration and management.</p>
+          </div>
+          <div class="service-card"><i class="fas fa-database"></i>
+            <h3>Backup &amp; DR</h3>
+            <p>3-2-1 backup strategy, business continuity, tested restores.</p>
+          </div>
+        </div>
+      </section>
+      <section>
+        <h2 class="section-title"><i class="fas fa-house-chimney"></i> For home
+          &amp; small office</h2>
+        <div class="card-grid">
+          <div class="service-card"><i class="fas fa-bug"></i>
+            <h3>Virus &amp; malware removal</h3>
+            <p>Deep clean &amp; protection for PCs and Macs.</p>
+          </div>
+          <div class="service-card"><i class="fas fa-gauge-high"></i>
+            <h3>Computer tune‑ups</h3>
+            <p>Speed up slow systems, SSD upgrades, cleanup.</p>
+          </div>
+          <div class="service-card"><i class="fas fa-hard-drive"></i>
+            <h3>Data recovery</h3>
+            <p>Professional recovery from broken drives or devices.</p>
+          </div>
+          <div class="service-card"><i class="fas fa-wifi"></i>
+            <h3>Wi‑Fi optimization</h3>
+            <p>Eliminate dead zones, mesh setup, interference fixes.</p>
+          </div>
+        </div>
+      </section>
+      <!-- FOUNDER note (personal touch, no pricing) -->
+      <div class="founder-note"> <i class="fas fa-quote-right"></i>
+        <p>"Tired of being a ticket number? When you call NerdFox, you get the
+          founder personally — not a rotating technician."</p>
+        <p style="margin-top: 1rem; font-size: 1.2rem; color:#F05A28;">— JC,
+          founder &amp; local tech</p>
+      </div>
+      <!-- CONTACT block (no pricing, only contact info + service area) -->
+      <div class="contact-block">
+        <div class="contact-details">
+          <h2><i class="fas fa-fox" style="color:#F05A28;"></i> Contact NerdFox</h2>
+          <p><i class="fas fa-phone-alt"></i> (661) 378-6262</p>
+          <p><i class="fas fa-envelope"></i> NerdFoxTech@gmail.com</p>
+          <p><i class="fas fa-map-pin"></i> Bakersfield, CA (we come to you)</p>
+          <p><i class="fas fa-clock"></i> Mon–Fri 9am–5pm, Sat by appointment</p>
+        </div>
+        <div class="service-area">
+          <h3><i class="fas fa-map-marked-alt"></i> Service area</h3>
+          <ul>
+            <li><i class="fas fa-check-circle"></i> Bakersfield</li>
+            <li><i class="fas fa-check-circle"></i> Delano</li>
+            <li><i class="fas fa-check-circle"></i> Shafter</li>
+            <li><i class="fas fa-check-circle"></i> Kern County</li>
+          </ul>
+          <p style="margin-top:1rem; color:#FFFFFF;">Local, face-to-face
+            support.</p>
+        </div>
+      </div>
+      <!-- quick links / social (no pricing) -->
+      <div style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; margin: 2rem 0;">
+        <span style="font-weight:600; color:#FFFFFF;"><i class="fab fa-linkedin"
+
+            style="color:#F05A28;"></i> LinkedIn (business)</span> <span style="font-weight:600; color:#FFFFFF;"><i
+
+            class="fab fa-facebook-square" style="color:#F05A28;"></i> Facebook
+          (community)</span> </div>
+    </div>
+    <!-- simple footer -->
+    <footer class="footer-temp">
+      <div class="container">
+        <!-- logo in footer as well -->
+        <div style="display: flex; justify-content: center; gap: 1rem; align-items: center; margin-bottom: 1.5rem;">
+          <span style="font-size: 1.8rem; font-weight: 800; color: #F05A28;">NerdFox</span>
+          <span style="font-size: 1.4rem; font-weight: 600; color: #FFFFFF;">Tech
+            Solutions</span> </div>
+        <p style="margin-bottom: 1rem;">© 2025 NerdFox Tech Solutions —
+          Bakersfield's no‑BS tech crew</p>
+        <div class="social"> <a href="#"><i class="fab fa-linkedin"></i></a> <a
+
+            href="#"><i class="fab fa-facebook-square"></i></a> <a href="#"><i
+
+              class="fas fa-envelope"></i></a> </div>
+        <hr style="max-width: 600px;">
+        <p style="opacity: 0.8; font-size: 0.9rem;">Transparent • Local • No
+          trapping contracts • Straight talk</p>
+      </div>
+    </footer>
+    <!-- small floating reminder (orange & dark) -->
+  </body>
+</html>
